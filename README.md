@@ -10,6 +10,10 @@ Install the dependencies running:
 $ npm install
 ```
 
+### Discrepancies between the code and the Code assessment:
+
+Accorrding with the Code assessment, there are: *tarif name*, *tarif benefits* and apparently a link to the tarif. In the *data.json* file those values doesn't exist; So I use Similar values in order to fulfill the requirements as similar as possible to the Code assessment.
+
 ### Features Completed until 3 hours (Verivox time limit)
 
 - [x] Develop an Angular result list with the appended mock data. 
@@ -18,6 +22,15 @@ $ npm install
 - [] Use a mobile first approach (the created scribbles are a general guideline for how it's supposed to look like) 
 - [x] Please also implement three filters to sort the tariff list (download/upload speed, price or any of the tariff attributes) 
 
+commit hash: 1e918c882eb37c518e81f18f006e9b3d8f7e1d4d
+
+### Features Completed until 4 hours (Van hack time limit)
+
+Same as above, plus:
+
+- Basic mobile version improvements
+
+Last Commit: *sort input area visual improvements*
 
 ## Development server
 
