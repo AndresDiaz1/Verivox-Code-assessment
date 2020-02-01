@@ -6,13 +6,20 @@ import * as fromStore from './store';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass']
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
 
   offers: any;
+  sortBy: string;
+  validFields: string[];
+  disableButton: boolean;
 
-  constructor(private store: Store<fromStore.OffersState>, private offersService: OffersService){}
+
+  constructor(private store: Store<fromStore.OffersState>, private offersService: OffersService){
+    this.validFields = ["downloadSpeed", "uploadSpeed", "price", "name", ];
+    this.disableButton = true;
+  }
 
   ngOnInit() {
     this.loadOffers();
@@ -31,5 +38,14 @@ export class AppComponent {
         console.log('Die offers', this.offers);
       }
     });
+  }
+
+  setSortBy(sortValue: string){
+    this.sortBy = sortValue.trim();
+    this.disableButton = this.validFields.includes(this.sortBy) ? false : true;
+  }
+
+  makeSort(){
+      this.offers = this.offersService.sortBy(this.offers, this.sortBy);
   }
 }

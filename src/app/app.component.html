@@ -1,4 +1,11 @@
-<div *ngFor="let tarifcard of offers; let i = index">
-    <app-tarif-card [Offerdata]=tarifcard></app-tarif-card>
-</div>
+<label>Sort by: (Type a valid field)</label>
+<span>Valid fields</span>
+<ul *ngFor="let field of validFields;">
+    <li>{{field}}</li>
+</ul>
+<input type="text" name="sortBy" id="sortBy" (keyup)="setSortBy($event.target.value)" class="form-control">
+<button (click)="makeSort()" [disabled]="disableButton">Sort</button>
+<mat-card *ngFor="let tarifcard of offers; let i = index">
+    <app-tarif-card [Offerdata]=tarifcard [index]=i></app-tarif-card>
+</mat-card>
 <router-outlet></router-outlet>

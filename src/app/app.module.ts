@@ -8,6 +8,8 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, effects } from './store';
 import { TarifCardComponent } from './components/tarif-card/tarif-card.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { TarifCardComponent } from './components/tarif-card/tarif-card.component
     HttpClientModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot(effects),
+    BrowserAnimationsModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

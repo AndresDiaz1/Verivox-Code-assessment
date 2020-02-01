@@ -33,4 +33,8 @@ export class OffersService {
       })
     );
   }
+
+  sortBy(data, selector){
+    return data.sort((a,b) => {return a[selector].localeCompare(b[selector])});
+  }
 }
