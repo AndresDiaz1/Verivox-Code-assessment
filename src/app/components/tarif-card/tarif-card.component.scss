@@ -11,3 +11,24 @@
   flex-basis: 100%;
   flex: 1;
 }
+
+.linkButton {
+  background-color: aqua;
+  height: 100%;
+}
+
+.padded-column {
+  padding-top: 10px;
+}
+
+.flex-4 {
+  flex-grow: 0.4;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.justify-center {
+  justify-content: center;
+}

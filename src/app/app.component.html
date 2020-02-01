@@ -3,8 +3,8 @@
 <ul *ngFor="let field of validFields;">
     <li>{{field}}</li>
 </ul>
-<input type="text" name="sortBy" id="sortBy" (keyup)="setSortBy($event.target.value)" class="form-control">
-<button (click)="makeSort()" [disabled]="disableButton">Sort</button>
+<input type="text" matInput name="sortBy" id="sortBy" (keyup)="setSortBy($event.target.value)" placeholder="name">
+<button id="sortButton"(click)="makeSort()" [disabled]="disableButton"  mat-flat-button>Sort</button>
 <mat-card *ngFor="let tarifcard of offers; let i = index">
     <app-tarif-card [Offerdata]=tarifcard [index]=i></app-tarif-card>
 </mat-card>

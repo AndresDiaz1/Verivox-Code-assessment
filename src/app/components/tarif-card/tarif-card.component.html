@@ -1,20 +1,29 @@
 
 <mat-card>
   <div class="row">
-    <div class="column">
-      {{index + 1}}
+    <div class="column flex-4">
+          {{index + 1}}
     </div>
-    <div class="column">
+    <div class="column padded-column">
       {{Offerdata.name}}
     </div>
-    <div class="column">
-      {{Offerdata.downloadSpeed}}
+    <div class="column padded-column align-center">
+      <div class="row">
+        <div class="column">
+            &#8595;{{Offerdata.downloadSpeed}}
+        </div>
+      </div>
+      <div class="row justify-center">
+          {{Offerdata.downloadUnit}}
+      </div>
     </div>
-    <div class="column">
+    <div class="column padded-column align-center">
       {{Offerdata.price}} €
     </div>
-    <div class="column">
-      <a *ngIf="Offerdata.URLDesktop && Offerdata.URLDesktop.url" [href]="Offerdata.URLDesktop.url">To Tarif ></a>
+    <div class="column padded-column flex-4">
+    <button class="linkButton"  *ngIf="Offerdata.URLDesktop && Offerdata.URLDesktop.url" mat-flat-button>
+          <a [href]="Offerdata.URLDesktop.url">></a>
+    </button>
     </div>
   </div>
 
