@@ -1,8 +1,21 @@
 
 <mat-card>
   <div class="row">
-    {{Offerdata.downloadSpeed}}
-    {{index}}
+    <div class="column">
+      {{index + 1}}
+    </div>
+    <div class="column">
+      {{Offerdata.name}}
+    </div>
+    <div class="column">
+      {{Offerdata.downloadSpeed}}
+    </div>
+    <div class="column">
+      {{Offerdata.price}} €
+    </div>
+    <div class="column">
+      <a *ngIf="Offerdata.URLDesktop && Offerdata.URLDesktop.url" [href]="Offerdata.URLDesktop.url">To Tarif ></a>
+    </div>
   </div>
 
 </mat-card>
