@@ -1,3 +1,4 @@
-
-
+<div *ngFor="let tarifcard of offers; let i = index">
+    <app-tarif-card [Offerdata]=tarifcard></app-tarif-card>
+</div>
 <router-outlet></router-outlet>

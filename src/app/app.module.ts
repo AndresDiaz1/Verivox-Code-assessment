@@ -7,10 +7,12 @@ import {HttpClientModule} from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { reducers, effects } from './store';
+import { TarifCardComponent } from './components/tarif-card/tarif-card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TarifCardComponent
   ],
   imports: [
     BrowserModule,

@@ -14,18 +14,23 @@ export class OffersService {
   }
 
   reduceData(offers: any) {
-    return offers.map(offer => {
-      return {
+    return offers.map(offer => 
+       ({
         downloadSpeed: offer.contractTerm.downloadSpeed.amount,
         downloadUnit: offer.contractTerm.downloadSpeed.unit,
         uploadSpeed: offer.contractTerm.uploadSpeed.amount,
         uploadUnit: offer.contractTerm.uploadSpeed.unit,
         price: offer.cost.effectiveCost.amount,
         name: offer.product.content.text,
-        benefits: offer.product,
+        benefit1: offer.product.hasPhoneFlatrate,
+        benefit2: offer.product.isTHomeAccess,
+        benefit3: offer.product.isForStudents,
+        benefit4: offer.product.positionZeroStatus,
+        benefit5: offer.product.isSpecialOffer ,
+        benefit6: offer.product.isForBusinessCustomers,
         URLDesktop: offer.signup.desktop,
         URLResponsive: offer.signup.responsive,
-      }
-    });
+      })
+    );
   }
 }
