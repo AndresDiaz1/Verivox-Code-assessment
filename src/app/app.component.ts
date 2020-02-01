@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { OffersService } from './services/offers.service';
+import { Store } from '@ngrx/store';
+import * as fromStore from './store';
 
 @Component({
   selector: 'app-root',
@@ -10,22 +12,21 @@ export class AppComponent {
 
   offers: any;
 
-  constructor(private offersService: OffersService){}
+  constructor(private store: Store<fromStore.OffersState>, private offersService: OffersService){}
 
   ngOnInit() {
     this.loadOffers();
   }
 
   loadOffers() {
+    this.store.dispatch(new fromStore.LoadOffers);
     this.getOffers();
   }
 
   getOffers() {
-    this.offersService.getOffers().subscribe(offers => {
+    this.store.select(fromStore.getAllOffers).subscribe(offers => {
       this.offers = offers;
-      console.log('offers', this.offers);
-    }, err => {
-      console.log('Can not get employees', err);
+      console.log('Die offers', this.offers);
     });
   }
 }
