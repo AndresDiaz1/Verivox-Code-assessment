@@ -24,9 +24,12 @@ export class AppComponent {
   }
 
   getOffers() {
-    this.store.select(fromStore.getAllOffers).subscribe(offers => {
-      this.offers = offers;
-      console.log('Die offers', this.offers);
+    this.store.select(fromStore.getAllOffers).subscribe(info => {
+      this.offers = info;
+      if (info['offers'] && info['offers'].length) {
+        this.offers = this.offersService.reduceData(info['offers']);
+        console.log('Die offers', this.offers);
+      }
     });
   }
 }
